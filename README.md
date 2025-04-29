@@ -1,22 +1,23 @@
 
 # DushBot
 
-A simple WhatsApp bot using whatsapp-web.js
+A WhatsApp bot using whatsapp-web.js, ready for deployment on Render.
 
 ## Features
 
-- Say `hi` to get a greeting
+- Replies to "hi"
+- QR-based login
+- Headless browser support for Render
 
 ## Setup
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+1. Run `npm install`
+2. Start with `node index.js`
+3. Open the QR code link from console in a browser
+4. Scan it with WhatsApp (Linked Devices)
 
-2. Start the bot:
-   ```
-   node index.js
-   ```
+## Deploy on Render
 
-3. Copy the QR code link printed in the terminal and open it in a browser tab. Scan it with WhatsApp.
+- Build command: `npm install`
+- Start command: `node index.js`
+- Make sure `.env` file is included in the repo

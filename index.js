@@ -2,10 +2,14 @@ const qrcode = require('qrcode');
 const { Client } = require('whatsapp-web.js');
 require('dotenv').config();
 
-const client = new Client();
+const client = new Client({
+    puppeteer: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        headless: true
+    }
+});
 
 client.on('qr', qr => {
-    // Generate and display a QR code URL
     qrcode.toDataURL(qr, (err, url) => {
         if (err) {
             console.error('Failed to generate QR code:', err);
